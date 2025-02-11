@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #141E30, #243B55);
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Estilo do Logo Dinâmico */
+.logo-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1000;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.status .circle {
+    width: 10px;
+    height: 10px;
+    background-color: #00FF00;
+    border-radius: 50%;
+}
+
+.status span {
+    font-size: 0.8rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
+}
+
+/* Estilo do Container Principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.profile-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    0% {
+        box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    }
+    50% {
+        box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.login-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.login-form input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff00ff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+.social-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #00ff00, #00ffff, #ff00ff, #00ffff);
+    background-size: 400%;
+    z-index: -1;
+    animation: neon-background 3s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes neon-background {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: 400% 0;
+    }
+}
+
+.social-button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.social-button i {
+    font-size: 14px;
+}
